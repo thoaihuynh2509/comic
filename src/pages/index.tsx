@@ -2,9 +2,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
 import MainLayout from '../components/MainLayout'
-
+import Sidebar from '../components/Sidebar'
+import Chapter from '../modules/Chapter'
+import { useChapterContext } from '../providers/ChapterProvider'
 
 const Home: NextPage = () => {
+  const { chapter } = useChapterContext();
+
   return (
     <>
       <Head>
@@ -14,9 +18,9 @@ const Home: NextPage = () => {
       </Head>
 
       <MainLayout
-        header={<Header name='Battle Through The Heavens' />}
-        content={<p>AAAAAA</p>}
-        sidebar={<p>Sidebar</p>}
+        header={<Header name='Battle Through The Heavens' chapter={chapter} />}
+        content={<Chapter />}
+        sidebar={<Sidebar />}
       />
         
     </>

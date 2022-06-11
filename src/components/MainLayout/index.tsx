@@ -17,7 +17,7 @@ const MainLayout = ({
   footer
 }: IMainLayoutProps) => {
   return (
-    <Layout className={styles.container}>
+    <Layout className={styles.container} hasSider>
       {header && <Layout.Header className={styles.header}>{header}</Layout.Header>}
       <Layout>
         {content && <Layout.Content className={styles.content}>{content}</Layout.Content>}
