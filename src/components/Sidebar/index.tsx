@@ -13,7 +13,7 @@ export default function Sidebar({
 }: ISidebarProps) {
   return (
     <aside>
-      {status === 'nothing' ? <SidebarNothing /> : <SidebarSelected />}
+      {status !== 'nothing' ? <SidebarNothing /> : <SidebarSelected />}
     </aside>
   )
 }

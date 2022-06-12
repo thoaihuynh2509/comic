@@ -1,0 +1,26 @@
+.container {
+
+  .line {
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .header,
+  .transcription,
+  .object,
+  .textStyle,
+  .stroke,
+  .shadow {
+    padding: 0.8125rem 1rem;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+
+  .iconGroup {
+    gap: 4px;
+  }
+}

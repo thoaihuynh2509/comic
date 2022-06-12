@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
 import { getChapter } from "../../../services"
-import { IChapterPage } from "../../../types/chapter"
+import { IChapterFile } from "../../../types/chapter"
 
 export const useChapter = () => {
-  const [ pages, setPages ] = useState<IChapterPage[]>([])
+  const [ files, setFiles ] = useState<IChapterFile[]>([])
 
   useEffect(() => {
     (async() => {
       const response = await getChapter();
       if (response.filesMap) {
-        setPages(Object.values(response.filesMap))
+        setFiles(Object.values(response.filesMap))
       }
     })();
   }, [])
 
   return {
-    pages
+    files
   }
 }

@@ -21,7 +21,7 @@ const MainLayout = ({
       {header && <Layout.Header className={styles.header}>{header}</Layout.Header>}
       <Layout>
         {content && <Layout.Content className={styles.content}>{content}</Layout.Content>}
-        {sidebar && <Layout.Sider className={styles.sidebar}>{sidebar}</Layout.Sider>}
+        {sidebar && <Layout.Sider className={styles.sidebar} width={300}>{sidebar}</Layout.Sider>}
       </Layout>
       {footer && <Layout.Footer>{footer}</Layout.Footer>}
     </Layout>
