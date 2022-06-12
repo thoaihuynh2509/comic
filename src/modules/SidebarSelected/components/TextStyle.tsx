@@ -6,7 +6,6 @@ import {
   DownOutlined,
   FontSizeOutlined,
   LineHeightOutlined,
-  ToTopOutlined,
   VerticalAlignBottomOutlined,
   VerticalAlignMiddleOutlined,
   VerticalAlignTopOutlined,
@@ -47,8 +46,10 @@ export default function TextStyle() {
         <Dropdown overlay={fontFamilyMenu}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>
-              Alex Mild World
-              <DownOutlined />
+              <Typography.Text className={styles.content}>
+                Alex Mild World
+              </Typography.Text>
+              <DownOutlined className={styles.symbol} />
             </Space>
           </a>
         </Dropdown>
@@ -60,18 +61,26 @@ export default function TextStyle() {
             <Dropdown overlay={fontFamilyMenu}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                  Regular
-                  <DownOutlined />
+                  <Typography.Text className={styles.content}>
+                    Regular
+                  </Typography.Text>
+                  <DownOutlined className={styles.symbol} />
                 </Space>
               </a>
             </Dropdown>
           </Col>
           <Col span={12}>
-            <Space className={styles.iconGroup}>
-              <AlignCenterOutlined />
-              <AlignCenterOutlined />
-              <AlignCenterOutlined />
-            </Space>
+            <Row gutter={8}>
+              <Col>
+                <AlignCenterOutlined />
+              </Col>
+              <Col>
+                <AlignCenterOutlined />
+              </Col>
+              <Col>
+                <AlignCenterOutlined />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Col>
@@ -79,19 +88,28 @@ export default function TextStyle() {
       <Col span={24}>
         <Row>
           <Col span={12}>
-            <Row gutter={8}>
-              <Col>
-                <FontSizeOutlined />
+            <Row>
+              <Col span={4}>
+                <FontSizeOutlined className={styles.symbol} />
               </Col>
-              <Col>24</Col>
+              <Col>
+                {" "}
+                <Typography.Text className={styles.content}>24</Typography.Text>
+              </Col>
             </Row>
           </Col>
           <Col span={12}>
-            <Space className={styles.iconGroup}>
-              <ColumnWidthOutlined />
-              <ColumnHeightOutlined />
-              <BorderOuterOutlined />
-            </Space>
+            <Row gutter={8}>
+              <Col>
+                <ColumnWidthOutlined />
+              </Col>
+              <Col>
+                <ColumnHeightOutlined />
+              </Col>
+              <Col>
+                <BorderOuterOutlined />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Col>
@@ -99,30 +117,42 @@ export default function TextStyle() {
       <Col span={24}>
         <Row>
           <Col span={12}>
-            <Row gutter={8}>
-              <Col>
-                <LineHeightOutlined />
+            <Row>
+              <Col span={4}>
+                <LineHeightOutlined className={styles.symbol} />
               </Col>
-              <Col>24</Col>
+              <Col>
+                <Typography.Text className={styles.content}>24</Typography.Text>
+              </Col>
             </Row>
           </Col>
           <Col span={12}>
-            <Space className={styles.iconGroup}>
-              <VerticalAlignBottomOutlined />
-              <VerticalAlignMiddleOutlined />
-              <VerticalAlignTopOutlined />
-            </Space>
+            <Row gutter={8}>
+              <Col>
+                <VerticalAlignBottomOutlined />
+              </Col>
+              <Col>
+                <VerticalAlignMiddleOutlined />
+              </Col>
+              <Col>
+                <VerticalAlignTopOutlined />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Col>
 
       <Col span={24}>
-        <Row gutter={8}>
-          <Col style={{ display: 'flex', alignItems: 'center' }}>
+        <Row>
+          <Col span={2} style={{ display: "flex", alignItems: "center" }}>
             <BoxColor color="#7B61FF" />
           </Col>
           <Col>
-            <Typography.Text>7B61FF</Typography.Text>
+            <Typography.Text>
+              <Typography.Text className={styles.content}>
+                7B61FF
+              </Typography.Text>
+            </Typography.Text>
           </Col>
         </Row>
       </Col>

@@ -1,4 +1,4 @@
-import { MenuOutlined } from "@ant-design/icons";
+import { GlobalOutlined, MenuOutlined } from "@ant-design/icons";
 import { Checkbox, Col, Row, Typography } from "antd";
 import React from "react";
 import BoxColor from "../../../components/BoxColor.tsx";
@@ -16,19 +16,19 @@ export default function Shadow() {
       <Col span={24}>
         <Row>
           <Col span={12}>
-            <Row gutter={8}>
-              <Col>
-                <Typography.Text>X</Typography.Text>
+            <Row>
+              <Col span={4}>
+                <Typography.Text className={styles.symbol}>X</Typography.Text>
               </Col>
-              <Col>10</Col>
+              <Col><Typography.Text className={styles.content}>10</Typography.Text></Col>
             </Row>
           </Col>
           <Col span={12}>
-            <Row gutter={8}>
-              <Col>
-                <Typography.Text>Y</Typography.Text>
+            <Row>
+              <Col span={4}>
+                <Typography.Text className={styles.symbol}>Y</Typography.Text>
               </Col>
-              <Col>10</Col>
+              <Col><Typography.Text className={styles.content}>10</Typography.Text></Col>
             </Row>
           </Col>
         </Row>
@@ -36,22 +36,22 @@ export default function Shadow() {
       <Col span={24}>
         <Row>
           <Col span={12}>
-            <Row gutter={8}>
-              <Col>
+            <Row>
+              <Col span={4} style={{ display: "flex", alignItems: "center" }}>
                 <BoxColor color="#544E74" />
               </Col>
               <Col>
-                <Typography.Text>544E74</Typography.Text>
+                <Typography.Text className={styles.content}>544E74</Typography.Text>
               </Col>
             </Row>
           </Col>
-          <Col>
-            <Row gutter={8}>
-              <Col>
-                <MenuOutlined />
+          <Col span={12}>
+            <Row>
+              <Col span={4}>
+                <GlobalOutlined className={styles.symbol} />
               </Col>
               <Col>
-                <Typography.Text>0.5</Typography.Text>
+                <Typography.Text className={styles.content}>0.5</Typography.Text>
               </Col>
             </Row>
           </Col>

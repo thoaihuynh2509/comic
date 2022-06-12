@@ -1,3 +1,4 @@
+import { AppstoreOutlined, RedoOutlined } from "@ant-design/icons";
 import { Col, Row, Typography } from "antd";
 import React from "react";
 
@@ -14,42 +15,78 @@ export default function Object() {
         <Row>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col span={4} className={styles.symbol}>
+                X
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  780
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col span={4} className={styles.symbol}>
+                Y
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  780
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
         </Row>
         <Row>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col span={4} className={styles.symbol}>
+                W
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  780
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col span={4} className={styles.symbol}>
+                H
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  780
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
         </Row>
         <Row>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col className={styles.symbol} span={4}>
+                <RedoOutlined />
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  220
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
           <Col span={12}>
             <Row>
-              <Col span={6}>X</Col>
-              <Col span={12}>780</Col>
+              <Col className={styles.symbol} span={4}>
+                <AppstoreOutlined />
+              </Col>
+              <Col>
+                <Typography.Text className={styles.content}>
+                  780
+                </Typography.Text>
+              </Col>
             </Row>
           </Col>
         </Row>
