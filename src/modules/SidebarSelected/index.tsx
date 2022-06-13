@@ -1,5 +1,6 @@
 import { Col, Divider, Row, Typography } from "antd";
 import React from "react";
+import { IStylingObject } from "../../types/object";
 import Object from "./components/Object";
 import Shadow from "./components/Shadow";
 import Stroke from "./components/Stroke";
@@ -8,7 +9,12 @@ import Transcription from "./components/Transcription";
 
 import styles from "./styles.module.scss";
 
-export default function SidebarSelected() {
+interface ISidebarSelectedProps {
+  object: IStylingObject
+}
+
+//TODO: only change name and text style
+export default function SidebarSelected({ object }: ISidebarSelectedProps) {
   return (
     <main className={styles.container}>
       <Row className={styles.header}>
@@ -19,7 +25,7 @@ export default function SidebarSelected() {
       
       <Divider className={styles.line} />
 
-      <Transcription />
+      <Transcription content={object.content} />
       <Divider className={styles.line} />
 
       <Object />

@@ -2,7 +2,11 @@ import { useEffect, useState } from "react"
 import { getChapter } from "../../../services"
 import { IChapterFile } from "../../../types/chapter"
 
-export const useChapter = () => {
+interface IUseChapterReturn {
+  files: IChapterFile[]
+}
+
+export const useChapter = (): IUseChapterReturn => {
   const [ files, setFiles ] = useState<IChapterFile[]>([])
 
   useEffect(() => {

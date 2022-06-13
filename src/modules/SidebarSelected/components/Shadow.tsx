@@ -1,7 +1,7 @@
 import { GlobalOutlined, MenuOutlined } from "@ant-design/icons";
 import { Checkbox, Col, Row, Typography } from "antd";
 import React from "react";
-import BoxColor from "../../../components/BoxColor.tsx";
+import Box from "../../../components/Box";
 
 import styles from "../styles.module.scss";
 
@@ -38,7 +38,7 @@ export default function Shadow() {
           <Col span={12}>
             <Row>
               <Col span={4} style={{ display: "flex", alignItems: "center" }}>
-                <BoxColor color="#544E74" />
+                <Box bgColor="#544E74" />
               </Col>
               <Col>
                 <Typography.Text className={styles.content}>544E74</Typography.Text>

@@ -1,15 +1,18 @@
 import React from "react";
-import ChapterFile from "./components/File";
+
+import ChapterFile from "../ChapterFile";
 import { useChapter } from "./hooks/useChapter";
 
-import styles from './styles.module.scss';
-
-const RATIO = 0.5
+const RATIO = 0.5;
 
 export default function Chapter() {
   const { files } = useChapter();
+
+  if (!files) {
+    return <p>Loading</p>;
+  }
   return (
-    <main className={styles.container}>
+    <main>
       {files.map((file, index) => (
         <ChapterFile key={index} ratio={RATIO} {...file} />
       ))}

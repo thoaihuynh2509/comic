@@ -1,7 +1,7 @@
 import { MenuOutlined } from "@ant-design/icons";
 import { Checkbox, Col, Row, Typography } from "antd";
 import React from "react";
-import BoxColor from "../../../components/BoxColor.tsx";
+import BoxColor from "../../../components/Box";
 
 import styles from "../styles.module.scss";
 
@@ -18,7 +18,7 @@ export default function Stroke() {
           <Col span={12}>
             <Row>
               <Col span={4} style={{ display: "flex", alignItems: "center" }}>
-                <BoxColor color="#000000" />
+                <BoxColor bgColor="#000000" />
               </Col>
               <Col>
                 <Typography.Text className={styles.content}>

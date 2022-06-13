@@ -1,13 +1,16 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Header from '../components/Header'
-import MainLayout from '../components/MainLayout'
-import Sidebar from '../components/Sidebar'
-import Chapter from '../modules/Chapter'
-import { useChapterContext } from '../providers/ChapterProvider'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Header from "../components/Header";
+import MainLayout from "../components/MainLayout";
+import Chapter from "../modules/Chapter";
+import SidebarNothing from "../modules/SidebarNothing";
+import SidebarSelected from "../modules/SidebarSelected";
+import { useChapterContext } from "../providers/ChapterProvider";
+import { useSelectedObjectContext } from "../providers/SelectedObjectProvider";
 
 const Home: NextPage = () => {
   const { chapter } = useChapterContext();
+  const { stylingObject } = useSelectedObjectContext();
 
   return (
     <>
@@ -18,13 +21,18 @@ const Home: NextPage = () => {
       </Head>
 
       <MainLayout
-        header={<Header name='Battle Through The Heavens' chapter={chapter} />}
+        header={<Header name="Battle Through The Heavens" chapter={chapter} />}
         content={<Chapter />}
-        sidebar={<Sidebar />}
+        sidebar={
+          stylingObject ? (
+            <SidebarSelected object={stylingObject} />
+          ) : (
+            <SidebarNothing />
+          )
+        }
       />
-        
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

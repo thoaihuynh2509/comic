@@ -12,7 +12,8 @@ import {
 } from "@ant-design/icons";
 import { Col, Dropdown, Menu, Row, Space, Typography } from "antd";
 import React from "react";
-import BoxColor from "../../../components/BoxColor.tsx";
+import BoxColor from "../../../components/Box";
+import { IStylingObject } from "../../../types/object";
 
 import styles from "../styles.module.scss";
 
@@ -145,7 +146,7 @@ export default function TextStyle() {
       <Col span={24}>
         <Row>
           <Col span={2} style={{ display: "flex", alignItems: "center" }}>
-            <BoxColor color="#7B61FF" />
+            <BoxColor bgColor="#7B61FF" />
           </Col>
           <Col>
             <Typography.Text>
