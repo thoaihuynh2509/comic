@@ -18,7 +18,7 @@ export default function ChapterFile({
   const canvasRef = useRef<any>(null);
   const fabricRef = useRef<fabric.Canvas>();
   const { uploadedImage } = useChapterContext()
-  const { fabricObjects, setStylingObject } = useSelectedObjectContext()
+  const { fabricObject, setStylingObject } = useSelectedObjectContext()
 
   const width = props.size.width * ratio;
   const height = props.size.height * ratio;
@@ -44,6 +44,8 @@ export default function ChapterFile({
     });
 
     fabricRef.current.on("mouse:down", () => {
+      fabricObject?.discardActiveObject()
+      fabricObject?.renderAll()
       setStylingObject && setStylingObject(null)
     })
 

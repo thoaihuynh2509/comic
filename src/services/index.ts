@@ -13,7 +13,7 @@ export const getChapter = async (): Promise<IChapter> => {
   
   } catch (error) {
     console.log(error);
-    return {}
+    return null as any
   }
 }
 

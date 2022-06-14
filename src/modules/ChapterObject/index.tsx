@@ -17,8 +17,7 @@ export default function ChapterObject({
   const canvasRef = useRef<any>(null);
   const fabricRef = useRef<fabric.Canvas>();
   const {
-    fabricObjects,
-    setFabricObjects,
+    setFabricObject,
     setStylingObject,
   } = useSelectedObjectContext();
 
@@ -61,7 +60,6 @@ export default function ChapterObject({
     });
 
     fabricRef.current.on("mouse:down", function (options: any) {
-      console.log(options)
       if (fabricRef.current && options.target) {
         const stylingObject: IStylingObject = {
           content: options.target.text || "",
@@ -72,15 +70,16 @@ export default function ChapterObject({
             color: options.target.color,
           },
         };
-        fabricRef.current.renderAll();
 
-        setFabricObjects && setFabricObjects([...(fabricObjects || []), fabricRef.current])
+        setFabricObject && setFabricObject(fabricRef.current)
         setStylingObject && setStylingObject(stylingObject);
+        fabricRef.current.renderAll();
       }
     });
 
     initCanvas({ canvas: fabricRef.current });
   });
+
 
   return (
     <div
